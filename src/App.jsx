@@ -1,14 +1,27 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import HomePage from "./pages/HomePage";
+import Mainlayout from "./layouts/Mainlayout";
+import ShowCase from "./pages/Showcase";
 
-import './App.css'
+import Navbar from "./components/Navbar";
+import Payments from "./pages/Payment";
+import Footer from "./components/Footer";
 
 function App() {
-
-
   return (
-    <h1 class="text-3xl font-bold underline">
-    Welcome to StartUptobe
-  </h1>
-  )
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Mainlayout />} />
+    </Routes>
+      <Routes>
+        <Route path="/showcase" element={<ShowCase />} />
+        <Route path="/payment" element={<Payments/>}/>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
