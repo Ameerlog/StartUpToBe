@@ -7,6 +7,7 @@ import TabletFooter from '../components/Footer'
 import VideoLogoFooterCard from '../components/Footerdown'
 import TestimonialsSection from '../components/Testimonals'
 import BentoGrid from '../components/BentoGrid'
+import HowItWorks from '../components/HowItWorks'
 
 
 
@@ -18,6 +19,8 @@ const Mainlayout = () => {
    <Home/>
    <DomainSection/>
    <TestimonialsSection/>
+   <HowItWorks/>
+
 
 {/* <AdvantageSection/> */}
 <BentoGrid/>

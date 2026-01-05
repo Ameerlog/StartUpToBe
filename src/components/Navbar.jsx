@@ -17,33 +17,246 @@ import {
   KeyRound,
   FileText,
   Plug,
+  CheckCircle,
+  FileCheck,
+  CalendarClock,
+  BarChart3,
+  Bell,
+  LayoutDashboard,
 } from "lucide-react";
 import Logo from "../assets/30 (1).svg";
 
 const navData = [
   {
-    label: "Visibility",
+    label: "How It Works ",
     items: [
       { icon: BookOpen, title: "Validate and Name your business", desc: "Brand Names, Premium domains, Name Availability", href: "/is-outseta-for-me" },
       { icon: PlayCircle, title: "Domains for sale", desc: "Available domains, Trade checks.", href: "/demo" },
       { icon: MessageCircle, title: "Build your digital presence", desc: "Website & landing Page, Brand messaging, Social media setup, Launch ready digital assets", href: "/the-case-for-outseta" },
     ],
   },
+ {
+  label: "Community",
+  items: [
+    {
+      icon: BookOpen,
+      title: "7-Day Founder Onboarding (Free)",
+      desc: "Daily guidance · Real mistakes · Clarity first",
+      href: "/community/onboarding",
+    },
+    {
+      icon: MessageCircle,
+      title: "Talk to a Startup Expert",
+      desc: "1-on-1 clarity before you decide",
+      href: "/community/expert",
+    },
+    {
+      icon: HandCoins,
+      title: "Get It Done With StartupToBe",
+      desc: "We handle it end-to-end",
+      href: "/get-started",
+    },
+  ],
+},
+
+{
+  label: "Visibility",
+  items: [
+    {
+      icon: Paintbrush,
+      title: "Startup Naming & Brand Identity",
+      desc: "What founders should know · Common mistakes · Free checklist",
+      href: "/visibility/naming",
+    },
+    {
+      icon: KeyRound,
+      title: "Premium Domains Marketplace",
+      desc: "Right domain strategy · Pricing traps · Verified availability",
+      href: "/visibility/domains",
+    },
+    {
+      icon: Users,
+      title: "Logo & Brand Kits",
+      desc: "Visual consistency · DIY vs professional · Starter kits",
+      href: "/visibility/branding",
+    },
+    {
+      icon: MessageCircle,
+      title: "Content Creation",
+      desc: "Launch content · Founder messaging · Market positioning",
+      href: "/visibility/content",
+    },
+    {
+      icon: Plug,
+      title: "Social Media Setup & Management",
+      desc: "Platform selection · Early traction · Growth basics",
+      href: "/visibility/social",
+    },
+  ],
+},
+
+
+
   {
-    label: "Filing & Compliances",
-    items: [
-      { icon: CreditCard, title: "Register your company", desc: "Privtate Limited LLP, OPC, Proprietorship", href: "/payments" },
-      { icon: Users, title: "Protect your brand", desc: "Trade mark search & filing, Logo & Brand protection, Copyright & IP Advisory", href: "/crm" },
-      { icon: Mail, title: "Set up GST & Compliances", desc: "GST Registrtion , Accounting & Book keeping setup, Ongoing Compliances & Filling", href: "/email" },
-    ],
+  label: "Pricing",
+  items: [
+    {
+      icon: LifeBuoy,
+      title: "Starter — Idea Stage",
+      desc: "Community access, readiness guidance & naming clarity",
+      href: "/pricing/starter",
+      meta: "₹0",
+    },
+    {
+      icon: FileText,
+      title: "Launch — Registration Stage",
+      desc: "Company registration, GST (if required), trademark & basic compliance",
+      href: "/pricing/launch",
+      meta: "₹6,999 – ₹9,999",
+    },
+    {
+      icon: Users,
+      title: "Growth — Ongoing",
+      desc: "Monthly compliance, accounting, visibility & founder accountability",
+      href: "/pricing/growth",
+      meta: "₹2,999 – ₹5,999 / month",
+    },
+  ],
+},
+
+
+
+
+
+{
+  label: "Accountability",
+  items: [
+    {
+      icon: CheckCircle,
+      title: "Startup Status Overview",
+      desc: "Always know where your startup stands",
+      href: "/accountability/overview",
+    },
+    {
+      icon: FileCheck,
+      title: "Compliance Tracking",
+      desc: "Track filings, obligations & compliance status in one place",
+      href: "/accountability/compliance",
+    },
+    {
+      icon: CalendarClock,
+      title: "Filing Deadlines",
+      desc: "Never miss MCA, GST or other regulatory deadlines",
+      href: "/accountability/deadlines",
+    },
+    {
+      icon: BarChart3,
+      title: "Monthly Summaries",
+      desc: "Clear monthly reports on filings, progress & risks",
+      href: "/accountability/summaries",
+    },
+    {
+      icon: Bell,
+      title: "Founder Reminders",
+      desc: "Smart reminders without stress or spam",
+      href: "/accountability/reminders",
+    },
+    {
+      icon: LayoutDashboard,
+      title: "Startup Health Dashboard",
+      desc: "One dashboard to track your startup’s health",
+      href: "/accountability/dashboard",
+    },
+  ],
+  footer: {
+    cta: "👉 Stay compliant without stress",
+    href: "/accountability",
   },
-  {
-    label: "Accountability",
-    items: [
-      { icon: FileText, title: "Run & Scale operations", desc: "CRM & Operational software, Accounting & Finance tools, Customer Support Outsourcing.", href: "https://go.outseta.com/support/kb/categories", external: true },
-    ],
-  },
+},
+
+
+
+{
+  label: "Filing & Compliance",
+  items: [
+    {
+      icon: FileText,
+      title: "Company Registration",
+      desc: "When you need it · Mistakes · Documents · Penalties",
+      href: "/compliance/company-registration",
+    },
+    {
+      icon: CreditCard,
+      title: "GST Registration",
+      desc: "Threshold clarity · Filing risks · Ongoing duties",
+      href: "/compliance/gst",
+    },
+    {
+      icon: KeyRound,
+      title: "Trademark & IP",
+      desc: "Brand protection · Legal risks · Filing strategy",
+      href: "/compliance/trademark",
+    },
+    {
+      icon: HandCoins,
+      title: "Accounting & Tax",
+      desc: "Founder errors · Cash flow · Tax basics",
+      href: "/compliance/accounting",
+    },
+    {
+      icon: CalendarDays,
+      title: "Ongoing Compliance",
+      desc: "Deadlines · ROC filings · Penalty avoidance",
+      href: "/compliance/ongoing",
+    },
+  ],
+},
+
+  
+{
+  label: "Marketplace",
+  items: [
+    {
+      icon: Plug,
+      title: "Domains for Sale",
+      desc: "Premium startup-ready domains",
+      href: "/marketplace/domains",
+    },
+    {
+      icon: KeyRound,
+      title: "Startup Name Ideas",
+      desc: "Curated & brandable name ideas",
+      href: "/marketplace/names",
+    },
+    {
+      icon: FileText,
+      title: "Registration Packages",
+      desc: "Company, GST & trademark bundles",
+      href: "/marketplace/registration",
+    },
+    {
+      icon: CalendarDays,
+      title: "Compliance Subscriptions",
+      desc: "Monthly filings & reminders",
+      href: "/marketplace/compliance",
+    },
+    {
+      icon: Paintbrush,
+      title: "Branding Bundles",
+      desc: "Logo, brand kit & launch assets",
+      href: "/marketplace/branding",
+    },
+  ],
+},
+
+
 ];
+
+const NO_DROPDOWN = new Set([
+  "How It Works ",
+  "Pricing",
+  "Marketplace",
+]);
 
 const dropdownPanel = {
   closed: { opacity: 0, y: -10, scale: 0.98, pointerEvents: "none", transition: { duration: 0.15 } },
@@ -72,12 +285,13 @@ function useOnClickOutside(ref, handler) {
 
 function NavLink({ href, children, external, className = "" }) {
   const props = external ? { target: "_blank", rel: "noreferrer" } : {};
+
   return (
     <a
       href={href}
       {...props}
       className={
-        "rounded-xl px-4 py-2 text-sm font-medium text-[#4a2a4a]/70 hover:bg-[#240029]/[0.05] hover:text-[#240029] transition " +
+        "inline-flex items-center rounded-xl px-2.5 py-1.5 text-[12.5px] font-medium text-[#4a2a4a]/70 hover:bg-[#240029]/[0.05] hover:text-[#240029] transition " +
         className
       }
     >
@@ -85,6 +299,7 @@ function NavLink({ href, children, external, className = "" }) {
     </a>
   );
 }
+
 
 function Dropdown({ label, items, openKey, setOpenKey }) {
   const isOpen = openKey === label;
@@ -94,7 +309,7 @@ function Dropdown({ label, items, openKey, setOpenKey }) {
       <button
         type="button"
         onClick={() => setOpenKey(isOpen ? null : label)}
-        className="inline-flex items-center gap-1 rounded-xl px-3 py-2 text-sm font-medium text-[#4a2a4a]/70 hover:bg-[#240029]/[0.05] hover:text-[#240029] transition"
+        className="inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 text-[12.5px] font-medium text-[#4a2a4a]/70 hover:bg-[#240029]/[0.05] hover:text-[#240029] transition"
         aria-haspopup="menu"
         aria-expanded={isOpen}
       >
@@ -165,7 +380,7 @@ export default function Navbar() {
 
   return (
     <header ref={rootRef} className="sticky top-3 z-50">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <div
           className="
             flex items-center px-3 py-2
@@ -205,17 +420,34 @@ export default function Navbar() {
           </div>
 
           <nav className="hidden flex-1 items-center justify-center gap-1 md:flex" aria-label="Primary">
-            {dropdowns.slice(0, 2).map((d) => (
-              <Dropdown key={d.label} {...d} openKey={openKey} setOpenKey={setOpenKey} />
-            ))}
-           
-            <Dropdown {...dropdowns[2]} openKey={openKey} setOpenKey={setOpenKey} />
-       
-            <NavLink href="/blog">Blog</NavLink>
-          </nav>
+  {dropdowns.map((d) =>
+    NO_DROPDOWN.has(d.label) ? (
+      <NavLink
+        key={d.label}
+        href={
+          d.label === "How It Works "
+            ? "/how-it-works"
+            : d.label === "Pricing"
+            ? "/pricing"
+            : "/marketplace"
+        }
+      >
+        {d.label}
+      </NavLink>
+    ) : (
+      <Dropdown
+        key={d.label}
+        {...d}
+        openKey={openKey}
+        setOpenKey={setOpenKey}
+      />
+    )
+  )}
+</nav>
+
 
           <div className="ml-auto hidden items-center gap-2 md:flex">
-            <a
+            {/* <a
               href="/login"
               className="
                 inline-flex h-9 items-center justify-center rounded-full
@@ -226,7 +458,7 @@ export default function Navbar() {
               "
             >
               Log in
-            </a>
+            </a> */}
             <a
               href="/get-started"
               className="
@@ -235,7 +467,7 @@ export default function Navbar() {
                 hover:opacity-90 transition
               "
             >
-              Sign up
+              Join Free
             </a>
           </div>
 
@@ -270,8 +502,25 @@ export default function Navbar() {
                 "
               >
                 <div className="flex flex-col gap-2">
-                  {dropdowns.map((group) => (
-                    <details key={group.label} className="group rounded-2xl border border-white/25 bg-white/15">
+                  {dropdowns.map((group) =>
+                    NO_DROPDOWN.has(group.label) ? (
+                      <a
+                        key={group.label}
+                        href={
+                          group.label === "How It Works "
+                            ? "/how-it-works"
+                            : group.label === "Pricing"
+                            ? "/pricing"
+                            : "/marketplace"
+                        }
+                        className="rounded-2xl px-4 py-3 text-sm font-semibold text-[#240029]
+                                  border border-white/25 bg-white/15"
+                      >
+                        {group.label}
+                      </a>
+                    ) : (
+                      <details key={group.label} className="group rounded-2xl border border-white/25 bg-white/15">
+
                       <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-[#240029] flex items-center justify-between">
                         {group.label}
                         <ChevronDown className="h-4 w-4 transition group-open:rotate-180" />
@@ -303,9 +552,9 @@ export default function Navbar() {
                   ))}
 
             
-                  <NavLink href="/blog" className="border border-white/25 bg-white/15">
+                  {/* <NavLink href="/blog" className="border border-white/25 bg-white/15">
                     Blog
-                  </NavLink>
+                  </NavLink> */}
 
                   <div className="mt-2 flex gap-2">
                     <a
