@@ -1,4 +1,25 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import B from "../assets/domain/Batteryfy.svg";
+import P from "../assets/domain/pregadays.svg";
+import DC from "../assets/domain/drychilli.svg";
+import DG from "../assets/domain/drygrains.svg";
+import MB from "../assets/domain/30mbps.svg";
+import CO from "../assets/domain/cosister.svg";
+
+function useIsSmall() {
+  const [isSmall, setIsSmall] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const sync = () => setIsSmall(mq.matches);
+    sync();
+    mq.addEventListener?.("change", sync);
+    return () => mq.removeEventListener?.("change", sync);
+  }, []);
+
+  return isSmall;
+}
 
 const container = {
   hidden: {},
@@ -36,11 +57,7 @@ function Card({ as: As = "div", href, className = "", children }) {
 }
 
 function Eyebrow({ children }) {
-  return (
-    <div className="text-xs font-semibold tracking-wide text-black/55">
-      {children}
-    </div>
-  );
+  return <div className="text-xs font-semibold tracking-wide text-black/55">{children}</div>;
 }
 
 function Title({ children }) {
@@ -48,11 +65,7 @@ function Title({ children }) {
 }
 
 function Muted({ children, className = "" }) {
-  return (
-    <p className={["text-sm leading-relaxed text-black/60", className].join(" ")}>
-      {children}
-    </p>
-  );
+  return <p className={["text-sm leading-relaxed text-black/60", className].join(" ")}>{children}</p>;
 }
 
 function CheckRow({ children }) {
@@ -83,10 +96,9 @@ function FadeTopBottom() {
   );
 }
 
-
 function VerticalMarquee({ rows }) {
   return (
-    <div className="relative h-56 overflow-hidden rounded-xl border border-black/10 bg-white">
+    <div className="relative h-56 sm:h-60 overflow-hidden rounded-xl bg-white border border-black/10">
       <FadeTopBottom />
       <div className="marquee-vert__track">
         {rows.concat(rows).map((r, idx) => (
@@ -96,7 +108,11 @@ function VerticalMarquee({ rows }) {
           >
             <div className="flex min-w-0 items-center gap-2">
               <div className="grid h-6 w-6 place-items-center rounded-full border border-black/10 bg-black/[0.02] text-[10px] font-extrabold text-black/60">
-                {r.icon}
+                {typeof r.icon === "string" ? (
+                  <img src={r.icon} alt="" className="h-4 w-4 scale-150" />
+                ) : (
+                  r.icon
+                )}
               </div>
               <div className="truncate text-xs font-semibold text-black">{r.name}</div>
             </div>
@@ -145,22 +161,17 @@ function EmailList() {
   );
 }
 
-
 function HelpDeskChat() {
   return (
     <div className="space-y-3">
       <div className="rounded-xl border border-black/10 bg-black/[0.02] px-3 py-2 text-xs text-black/70">
         “I’m not sure what to do next. Should I register first or buy the domain?”
       </div>
-      <div className="text-center text-[11px] font-semibold text-black/55">
-        StartupToBe mapped the next step
-      </div>
+      <div className="text-center text-[11px] font-semibold text-black/55">StartupToBe mapped the next step</div>
       <div className="rounded-xl border border-black/10 bg-white px-3 py-2 text-xs text-black/70">
         Start with name + domain shortlist → then choose structure → then file registration. You’ll see a checklist with documents and timelines.
       </div>
-      <div className="text-center text-[11px] font-semibold text-black/55">
-        Founder moved to Step 2
-      </div>
+      <div className="text-center text-[11px] font-semibold text-black/55">Founder moved to Step 2</div>
     </div>
   );
 }
@@ -195,9 +206,7 @@ function AuthPreview() {
           </div>
 
           <div className="mt-3 flex items-center gap-2 rounded-lg border border-[#635BFF]/25 bg-[#635BFF]/10 px-3 py-2 text-[11px] text-[#4a42ff]">
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/70">
-              ✓
-            </span>
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/70">✓</span>
             <span className="font-semibold">Support ready</span>
           </div>
         </div>
@@ -257,39 +266,34 @@ function ReportingCard() {
 }
 
 export default function MembershipBento() {
+  const isSmall = useIsSmall();
+
   const nameRows = [
-    { icon: "N", name: "Novatra", status: ".in available" },
-    { icon: "D", name: "DhanBoard", status: ".com premium" },
-    { icon: "S", name: "StartupToBe", status: ".com taken" },
-    { icon: "B", name: "BrandPilot", status: ".in available" },
-    { icon: "T", name: "ToBeLabs", status: ".com premium" },
-    { icon: "K", name: "Karyaa", status: ".in available" },
+    { icon: B, name: "Batteryfy", status: ".in available" },
+    { icon: P, name: "Pregadays", status: ".com premium" },
+    { icon: DC, name: "DryChillis", status: ".com taken" },
+    { icon: DG, name: "DrayGrains", status: ".in available" },
+    { icon: MB, name: "30Mbps", status: ".com premium" },
+    { icon: CO, name: "Cosister", status: ".in available" },
   ];
 
   return (
-    <section className="bg-[#F6F6FB] py-16 sm:py-20">
+    <section className="bg-[#F6F6FB] py-16 sm:py-20 overflow-x-hidden">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-
-        <div className="mb-10 text-center">
+        <div className="mb-10 text-center text-black/70">
           <Eyebrow>StartupToBe — Start Your Business</Eyebrow>
-          <h2 className="mt-2 text-balance text-2xl font-extrabold tracking-tight text-black sm:text-3xl lg:text-4xl">
-            A guided startup journey — from idea to operation.
+          <h2 className="mt-2 text-balance text-2xl font-extrabold tracking-tight text-black sm:text-3xl lg:text-7xl">
+            A guided startup journey from idea to operation.
           </h2>
-          <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-black/65">
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-black/70">
             Founder-first marketplace inspired by structured platforms. Clear steps for India, with execution handled in the background.
           </p>
 
           <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <a
-              href="/start"
-              className="inline-flex items-center justify-center rounded-xl bg-black px-4 py-2 text-sm font-semibold text-white"
-            >
+            <a href="/start" className="inline-flex items-center justify-center rounded-xl bg-black px-4 py-2 text-sm font-semibold text-white">
               Start Your Business with StartupToBe
             </a>
-            <a
-              href="/how-it-works"
-              className="inline-flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-black/70"
-            >
+            <a href="/" className="inline-flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-black/70">
               How it works
             </a>
           </div>
@@ -298,13 +302,13 @@ export default function MembershipBento() {
         <motion.div
           variants={container}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid min-h-0 grid-cols-12 gap-4"
+          animate={isSmall ? "show" : undefined}
+          whileInView={isSmall ? undefined : "show"}
+          viewport={{ once: true, amount: 0.15 }}
+          className="grid grid-cols-12 gap-3 sm:gap-4"
         >
- 
-          <motion.div variants={item} className="col-span-12 lg:col-span-6 min-h-0">
-            <Card as="a" href="/company-registration" className="p-4">
+          <motion.div variants={item} className="col-span-12 md:col-span-6 lg:col-span-6 min-h-0">
+            <Card as="a" href="/" className="p-4 sm:p-6">
               <div className="flex flex-wrap items-center gap-3">
                 <Title>Register Your Company</Title>
                 <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.02] px-3 py-1 text-xs text-black/60">
@@ -323,7 +327,7 @@ export default function MembershipBento() {
                 <CheckRow>Proprietorship</CheckRow>
               </div>
 
-              <div className="mt-6 rounded-2xl border border-[#635BFF]/25 bg-[#635BFF]/10 p-5">
+              <div className="mt-6 rounded-2xl border border-[#635BFF]/25 bg-[#635BFF]/10 p-4 sm:p-5">
                 <div className="flex flex-wrap justify-center gap-2">
                   {["PAN/TAN", "Incorporation", "Director setup", "Post-registration"].map((b) => (
                     <Badge key={b}>{b}</Badge>
@@ -331,9 +335,9 @@ export default function MembershipBento() {
                 </div>
 
                 <div className="mt-5 flex items-center justify-center">
-                  <div className="grid h-40 w-40 place-items-center rounded-[28px] border border-[#635BFF]/50 bg-white">
+                  <div className="grid h-28 w-28 sm:h-36 sm:w-36 place-items-center rounded-[28px] border border-[#635BFF]/50 bg-white">
                     <div className="text-center">
-                      <div className="text-2xl font-extrabold text-[#635BFF]">COI</div>
+                      <div className="text-xl sm:text-2xl font-extrabold text-[#635BFF]">COI</div>
                       <div className="text-xs font-semibold text-black/60">Company formed</div>
                     </div>
                   </div>
@@ -343,66 +347,59 @@ export default function MembershipBento() {
           </motion.div>
 
           <motion.div variants={item} className="col-span-12 md:col-span-6 lg:col-span-3 min-h-0">
-            <Card as="a" href="/brand-names" className="p-6">
+            <Card as="a" href="/" className="p-4 sm:p-6">
               <Title>Validate & Name</Title>
               <Muted className="mt-3">
                 Curated startup-ready brand names, premium domains, and guidance before you move forward.
               </Muted>
-
-              <div className="mt-5 min-h-0">
+              <div className="mt-5">
                 <VerticalMarquee rows={nameRows} />
               </div>
             </Card>
           </motion.div>
 
-
           <motion.div variants={item} className="col-span-12 md:col-span-6 lg:col-span-3 min-h-0">
-            <Card as="a" href="/digital-presence" className="p-6">
-              <Title> Digital Presence</Title>
+            <Card as="a" href="/" className="p-4 sm:p-6">
+              <Title>Digital Presence</Title>
               <Muted className="mt-3">
                 Look credible from Day One with website content, brand messaging, and launch-ready assets.
               </Muted>
-
-              <div className="mt-5 min-h-0">
+              <div className="mt-5">
                 <EmailList />
               </div>
             </Card>
           </motion.div>
 
-          {/* Community */}
           <motion.div variants={item} className="col-span-12 md:col-span-6 lg:col-span-3 min-h-0">
-            <Card as="a" href="/community" className="p-6">
+            <Card as="a" href="/" className="p-4 sm:p-6">
               <Title>Community</Title>
               <Muted className="mt-3">
                 Before the launch, there’s StartupToBe. Learn from others, get answers, share progress, and don’t build alone.
               </Muted>
-
               <div className="mt-5">
                 <HelpDeskChat />
               </div>
             </Card>
           </motion.div>
-          <motion.div variants={item} className="col-span-12 lg:col-span-6 min-h-0">
-            <Card as="a" href="/operations" className="p-6">
-              <Title> Run & Scale Operations</Title>
+
+          <motion.div variants={item} className="col-span-12 md:col-span-6 lg:col-span-6 min-h-0">
+            <Card as="a" href="/" className="p-4 sm:p-6">
+              <Title>Run & Scale Operations</Title>
               <Muted className="mt-3">
                 Systems and support that grow with you — CRM & ops tools, finance workflows, support outsourcing, and back-office execution.
               </Muted>
-
-              <div className="mt-5 max-h-[360px] overflow-hidden">
+              <div className="mt-5 overflow-hidden">
                 <AuthPreview />
               </div>
             </Card>
           </motion.div>
 
-          {/* Step 4 (+ Step 3 mention) */}
           <motion.div variants={item} className="col-span-12 md:col-span-6 lg:col-span-3 min-h-0">
-            <Card as="a" href="/gst" className="p-6">
-              <Title> GST & Compliance</Title>
+            <Card as="a" href="/" className="p-4 sm:p-6">
+              <Title>GST & Compliance</Title>
               <Muted className="mt-3">
                 Stay compliant as you start operations — GST, filings, and bookkeeping setup (based on your business type).
               </Muted>
-
               <div className="mt-5">
                 <ReportingCard />
               </div>
@@ -415,9 +412,15 @@ export default function MembershipBento() {
         .marquee-vert__track{
           animation: marqueeVert 11s linear infinite;
         }
+        .marquee-vert__track:hover{
+          animation-play-state: paused;
+        }
         @keyframes marqueeVert{
           from { transform: translateY(0); }
           to { transform: translateY(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-vert__track{ animation: none; transform: none; }
         }
       `}</style>
     </section>

@@ -345,18 +345,18 @@ export default function Payments() {
         </div> */}
 
 <div className="mx-auto max-w-6xl px-4 py-20">
-  <div className="grid gap-12 lg:grid-cols-12">
+  <div className="grid gap-14 lg:grid-cols-12 items-start">
 
     {/* LEFT */}
     <div className="lg:col-span-5">
-      <div className="flex items-center gap-3 mb-4 text-zinc-500">
+      <div className="flex items-center gap-3 text-zinc-500 mb-6">
         <GradientIcon Icon={UsersRound} />
         <span className="text-sm font-semibold tracking-wide uppercase">
           Why founders choose StartupToBe
         </span>
       </div>
 
-      <p className="mt-8 font-semibold text-zinc-900 text-lg">
+      <p className="mt-10 text-lg font-semibold leading-relaxed text-zinc-900 dark:text-zinc-100">
         We don’t just file documents.
         <br />
         We own the responsibility.
@@ -366,20 +366,23 @@ export default function Payments() {
     {/* RIGHT */}
     <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2">
 
-      <div className="rounded-xl border border-zinc-200 bg-white p-6">
-        <h3 className="font-semibold text-zinc-900">
+      {/* Card 1 */}
+      <div className="group rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm">
+        <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
           No hidden costs
         </h3>
       </div>
 
-      <div className="rounded-xl border border-zinc-200 bg-white p-6">
-        <h3 className="font-semibold text-zinc-900">
+      {/* Card 2 */}
+      <div className="group rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm">
+        <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
           No last-minute panic
         </h3>
       </div>
 
-      <div className="rounded-xl border border-zinc-200 bg-white p-6">
-        <h3 className="font-semibold text-zinc-900">
+      {/* Card 3 */}
+      <div className="group sm:col-span-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm">
+        <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
           No legal confusion
         </h3>
       </div>
@@ -387,6 +390,7 @@ export default function Payments() {
     </div>
   </div>
 </div>
+
 
 
 

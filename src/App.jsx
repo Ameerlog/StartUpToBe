@@ -1,36 +1,59 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import HomePage from "./pages/HomePage";
-import Mainlayout from "./layouts/Mainlayout";
+
 import ShowCase from "./pages/Showcase";
 
-import Navbar from "./components/Navbar";
-import Payments from "./pages/Payment";
+
 import Footer from "./components/Footer";
-import HowItWorks from "./components/HowItWorks";
-import FilingCompliance from "./pages/FilingCompliance";
+
+import DetailsPage from "./pages/DetailsPage.jsx";
+import ReserveDomainPage from "./pages/PaymentPage";
 import Visibility from "./pages/Visiblity";
+import ThankYou from "./pages/SubmitPage";
+// import Community from "./pages/Community";
 import Accountability from "./pages/Accountability";
+import FilingCompliance from "./pages/FilingCompliance";
+import PaymentPage from "./pages/PaymentPage";
+
+
+
+
+import Navbar from "./components/Navbar";
+import MainLayout from "./layouts/Mainlayout";
+import DomainSection from "./components/DomianSection.jsx";
+
 
 function App() {
   return (
     <BrowserRouter>
 
+  <div className="w-full fixed absolute top-5 left-0 z-50">
+    <Navbar />
+  </div>
+
+
+  <div className="pt-0">
     <Routes>
-      <Route path="/" element={<Mainlayout />} />
+      <Route path="/" element={<MainLayout />} />
+      <Route path="/showcase" element={<ShowCase />} />
+      <Route path="/showcase/:slug" element={<DetailsPage />} />
+      <Route path="/showcase/:slug/payment" element={<ReserveDomainPage />} />
+      <Route path="/showcase/:slug/payment/success" element={<ThankYou />} />
+      
+
+          {/* <Route path="/community" element={<Community />} /> */}
+          <Route path="/accountability" element={<Accountability />} />
+          <Route path="/compliance" element={<FilingCompliance />} />
+          <Route path="/visibility" element={<Visibility />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/domain" element={<DomainSection/>} />
+
     </Routes>
-      <Routes>
-        <Route path="/showcase" element={<ShowCase />} />
-        <Route path="/payment" element={<Payments/>}/>
-        <Route path="/compliance" element={<FilingCompliance/>} />
-        <Route path="/visibility" element={<Visibility/>} />
-        <Route path="/accountability" element={<Accountability/>} />
+  </div>
 
+  <Footer />
+</BrowserRouter>
 
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
   );
 }
 

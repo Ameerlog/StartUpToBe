@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 const TESTIMONIALS = [
   {
-    name: "Rahul Mehta",
+    name: "Neminath",
     title: "First-time Founder",
-    avatar: "https://i.pravatar.cc/150?img=15",
+    
     body: (
       <>
         <p>
@@ -25,9 +25,9 @@ const TESTIMONIALS = [
     ),
   },
   {
-    name: "Ankit Sharma",
+    name: "Faisal",
     title: "Founder & CEO",
-    avatar: "https://i.pravatar.cc/150?img=28",
+ 
     body: (
       <>
         <p>
@@ -45,9 +45,9 @@ const TESTIMONIALS = [
     ),
   },
   {
-    name: "Neha Kulkarni",
+    name: "Sangmesh",
     title: "Startup Consultant",
-    avatar: "https://i.pravatar.cc/150?img=47",
+  
     body: (
       <>
         <p>
@@ -97,7 +97,7 @@ export default function Testimonials() {
     <section className="pt-0 pb-16 sm:pb-20 mt-10">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         <div className="mb-8 flex justify-center">
-          <h2 className="max-w-3xl text-center text-xl font-kaio tracking-tight sm:text-2xl lg:text-5xl text-black">
+          <h2 className="max-w-3xl text-center text-xl font-kaio tracking-tight sm:text-2xl lg:text-5xl  text-black">
           “Everything I needed to turn an idea into a registered, credible startup — in one place..."
           </h2>
         </div>
@@ -118,12 +118,7 @@ export default function Testimonials() {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <img
-                      src={t.avatar}
-                      alt={t.name}
-                      loading="lazy"
-                      className="h-[52px] w-[52px] rounded-full object-cover"
-                    />
+                  
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute -inset-[3px] rounded-full border border-white/20"

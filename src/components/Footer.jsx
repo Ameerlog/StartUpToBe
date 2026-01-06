@@ -5,92 +5,57 @@ import Logo from "../assets/30 (1).svg";
 const BlueskyIcon = ({ className }) => (
   <div
     className={[
-      "grid h-5 w-5 place-items-center rounded-full border border-current text-[9px] font-semibold leading-none",
+      "grid h-6 w-6 place-items-center rounded-full border border-current text-[10px] font-semibold leading-none",
       className,
     ].join(" ")}
   >
-    StartTobe
+    ST
   </div>
 );
 
 const social = [
-  { href: "https://x.com/starttobe", label: "X", Icon: Twitter },
-  { href: "https://bsky.app/profile/starttobe.com", label: "Bluesky", Icon: BlueskyIcon },
-  { href: "https://www.linkedin.com/company/starttobe", label: "LinkedIn", Icon: Linkedin },
-  { href: "https://www.youtube.com/@starttobe", label: "YouTube", Icon: Youtube },
+  { href: "#", label: "X", Icon: Twitter },
+  { href: "#", label: "Bluesky", Icon: BlueskyIcon },
+  { href: "#", label: "LinkedIn", Icon: Linkedin },
+  { href: "#", label: "YouTube", Icon: Youtube },
 ];
 
 const columns = [
-  {
-    title: "Product",
-    links: [
-      { href: "/payments", label: "Payments" },
-      { href: "/crm", label: "CRM" },
-      { href: "/email", label: "Email" },
-      { href: "/help-desk", label: "Help desk" },
-      { href: "/authentication", label: "Auth and gating" },
-      { href: "/pricing", label: "Pricing" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/company", label: "About us" },
-      { href: "/blog", label: "Blog" },
-      { href: "/partners", label: "Partner program" },
-      { href: "/privacy-policy", label: "Privacy policy" },
-      { href: "/terms-of-service", label: "Terms of service" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { href: "https://zapier.com", label: "Zapier integration", external: true },
-      { href: "/webflow", label: "Webflow + StartToBe" },
-      { href: "/guides", label: "Integrations" },
-      { href: "https://status.starttobe.com", label: "Status", external: true },
-    ],
-  },
-  {
-    title: "Developers",
-    links: [
-      { href: "/docs", label: "Documentation" },
-      { href: "/api", label: "API docs" },
-      { href: "/workflows", label: "Time-saving workflows" },
-    ],
-  },
+  { title: "Product", links: ["Marketplace", "Domains for Sale", "Startup Toolkit", "Pricing"] },
+  { title: "Solutions", links: ["Company Registration", "GST & Tax Filing", "Trademark & IP", "Accounting & Compliance", "Startup Visibility"] },
+  { title: "Community", links: ["Founder Community", "Free Startup Guides", "Events & Webinars", "Partner Program"] },
+  { title: "Resources", links: ["Legal Basics for Founders", "Brand Naming Guide"] },
+  { title: "Company", links: ["About StartupToBe", "How It Works", "Careers", "Contact Us", "Privacy Policy", "Terms of Service"] },
+  { title: "Trust & Security", links: ["Secure Payments", "Transparent Pricing", "Founder-First Approach", "India-Focused Compliance"] },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-zinc-900 ">
-      <section className="border-t border-zinc-200">
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          <div className="grid gap-10 lg:grid-cols-5">
+    <footer className="bg-white text-zinc-900">
+      <section className="border-t border-zinc-200 ">
+        <div className="mx-auto max-w-6xl px-4 py-14 bottom-4">
 
-            <div className="lg:col-span-1 flex flex-col justify-between gap-6">
+          <div className="grid gap-y-10 gap-x-12 lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1">
+           
+            <div className="flex flex-col justify-between gap-6">
               <div>
                 <div className="mb-6">
-                  <img
-                    src={Logo}
-                    alt="StartToBe"
-                    className="h-8 w-auto scale-900 ml-11 "
-                  />
+                  <a href="/">
+                    <img src={Logo} alt="StartupToBe" className="h-16 w-auto scale-600 ml-8" />
+                  </a>
                 </div>
-                <div className="text-sm text-zinc-500">
-                  © 2025 StartToBe
+                <div className="text-sm text-zinc-600">
+                  Before the launch, there’s StartupToBe.
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
-                {social.map(({ href, label, Icon }) => (
+              <div className="flex flex-wrap gap-2">
+                {social.map(({ label, Icon }) => (
                   <a
-                    key={href}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
+                    key={label}
+                    href="#"
                     aria-label={label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition hover:bg-zinc-50 hover:text-zinc-950"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition hover:bg-pink-500 hover:text-zinc-950"
                   >
                     <Icon className="h-5 w-5" />
                   </a>
@@ -98,28 +63,35 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="lg:col-span-4 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Footer Columns */}
+            <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-3 sm:grid-cols-1 gap-y-10 gap-x-8">
               {columns.map((col) => (
                 <div key={col.title} className="flex flex-col gap-2">
                   <div className="text-sm font-semibold text-zinc-900">
                     {col.title}
                   </div>
-
-                  {col.links.map((l) => (
+                  {col.links.map((label, idx) => (
                     <a
-                      key={l.href + l.label}
-                      href={l.href}
-                      target={l.external ? "_blank" : undefined}
-                      rel={l.external ? "noreferrer" : undefined}
+                      key={label + idx}
+                      href="#"
                       className="text-sm text-zinc-600 hover:text-zinc-950"
                     >
-                      {l.label}
+                      {label}
                     </a>
                   ))}
                 </div>
               ))}
             </div>
+          </div>
 
+          {/* Bottom Text */}
+          <div className="mt-10 border-t border-zinc-200 pt-6 flex flex-col items-center justify-center gap-1 text-center">
+            <div className="text-sm text-zinc-500">
+              © 2026 StartupToBe. All rights reserved.
+            </div>
+            <div className="text-sm text-zinc-500">
+              Built for founders, startups-to-be, and dreamers.
+            </div>
           </div>
         </div>
       </section>

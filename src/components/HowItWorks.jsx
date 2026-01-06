@@ -23,22 +23,11 @@ export default function HowItWorks() {
       }}
     >
       <div className="mx-auto max-w-5xl px-4 flex flex-col items-center">
-       
-                     <img
-                       src={Logo}
-                       alt="StartUptobe"
-                       className="
-                         h-40 w-full
-                         object-contain
-                         bg-transparent
-                         block
-                         pl-3
-                         scale-500
-                       "
-                       loading="lazy"
-                     />
+      
+      
+     <img src={Logo} alt="StartupToBe" className="h-16 w-auto scale-600 ml-8" />
 
-        <div className="my-6 h-px w-[28rem] bg-[#240029]/20" />
+<div className="my-6 h-px w-full max-w-[28rem] bg-[#240029]/20" />
 
         
         <div className="mt-10 w-full max-w-lg mx-auto transform translate-x-2">

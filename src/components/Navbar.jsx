@@ -25,15 +25,12 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 import Logo from "../assets/30 (1).svg";
+import { href } from "react-router-dom";
 
 const navData = [
   {
     label: "How It Works ",
-    items: [
-      { icon: BookOpen, title: "Validate and Name your business", desc: "Brand Names, Premium domains, Name Availability", href: "/is-outseta-for-me" },
-      { icon: PlayCircle, title: "Domains for sale", desc: "Available domains, Trade checks.", href: "/demo" },
-      { icon: MessageCircle, title: "Build your digital presence", desc: "Website & landing Page, Brand messaging, Social media setup, Launch ready digital assets", href: "/the-case-for-outseta" },
-    ],
+    href:"/"
   },
  {
   label: "Community",
@@ -104,22 +101,19 @@ const navData = [
       icon: LifeBuoy,
       title: "Starter — Idea Stage",
       desc: "Community access, readiness guidance & naming clarity",
-      href: "/pricing/starter",
-      meta: "₹0",
+      href: "/pricing"
     },
     {
       icon: FileText,
       title: "Launch — Registration Stage",
       desc: "Company registration, GST (if required), trademark & basic compliance",
-      href: "/pricing/launch",
-      meta: "₹6,999 – ₹9,999",
+      href: "/pricing",
     },
     {
       icon: Users,
       title: "Growth — Ongoing",
       desc: "Monthly compliance, accounting, visibility & founder accountability",
-      href: "/pricing/growth",
-      meta: "₹2,999 – ₹5,999 / month",
+      href: "/payment",
     },
   ],
 },
@@ -135,37 +129,37 @@ const navData = [
       icon: CheckCircle,
       title: "Startup Status Overview",
       desc: "Always know where your startup stands",
-      href: "/accountability/overview",
+      href: "/accountability",
     },
     {
       icon: FileCheck,
       title: "Compliance Tracking",
       desc: "Track filings, obligations & compliance status in one place",
-      href: "/accountability/compliance",
+      href: "/accountability",
     },
     {
       icon: CalendarClock,
       title: "Filing Deadlines",
       desc: "Never miss MCA, GST or other regulatory deadlines",
-      href: "/accountability/deadlines",
+      href: "/accountability",
     },
     {
       icon: BarChart3,
       title: "Monthly Summaries",
       desc: "Clear monthly reports on filings, progress & risks",
-      href: "/accountability/summaries",
+      href: "/accountability",
     },
     {
       icon: Bell,
       title: "Founder Reminders",
       desc: "Smart reminders without stress or spam",
-      href: "/accountability/reminders",
+      href: "/accountability",
     },
     {
       icon: LayoutDashboard,
       title: "Startup Health Dashboard",
       desc: "One dashboard to track your startup’s health",
-      href: "/accountability/dashboard",
+      href: "/accountability",
     },
   ],
   footer: {
@@ -183,31 +177,31 @@ const navData = [
       icon: FileText,
       title: "Company Registration",
       desc: "When you need it · Mistakes · Documents · Penalties",
-      href: "/compliance/company-registration",
+      href: "/compliance",
     },
     {
       icon: CreditCard,
       title: "GST Registration",
       desc: "Threshold clarity · Filing risks · Ongoing duties",
-      href: "/compliance/gst",
+      href: "/compliance",
     },
     {
       icon: KeyRound,
       title: "Trademark & IP",
       desc: "Brand protection · Legal risks · Filing strategy",
-      href: "/compliance/trademark",
+      href: "/compliance",
     },
     {
       icon: HandCoins,
       title: "Accounting & Tax",
       desc: "Founder errors · Cash flow · Tax basics",
-      href: "/compliance/accounting",
+      href: "/compliance",
     },
     {
       icon: CalendarDays,
       title: "Ongoing Compliance",
       desc: "Deadlines · ROC filings · Penalty avoidance",
-      href: "/compliance/ongoing",
+      href: "/compliance",
     },
   ],
 },
@@ -220,31 +214,31 @@ const navData = [
       icon: Plug,
       title: "Domains for Sale",
       desc: "Premium startup-ready domains",
-      href: "/marketplace/domains",
+      href: "/marketplace",
     },
     {
       icon: KeyRound,
       title: "Startup Name Ideas",
       desc: "Curated & brandable name ideas",
-      href: "/marketplace/names",
+      href: "/marketplace",
     },
     {
       icon: FileText,
       title: "Registration Packages",
       desc: "Company, GST & trademark bundles",
-      href: "/marketplace/registration",
+      href: "/marketplace",
     },
     {
       icon: CalendarDays,
       title: "Compliance Subscriptions",
       desc: "Monthly filings & reminders",
-      href: "/marketplace/compliance",
+      href: "/marketplace",
     },
     {
       icon: Paintbrush,
       title: "Branding Bundles",
       desc: "Logo, brand kit & launch assets",
-      href: "/marketplace/branding",
+      href: "/marketplace",
     },
   ],
 },
@@ -426,10 +420,10 @@ export default function Navbar() {
         key={d.label}
         href={
           d.label === "How It Works "
-            ? "/how-it-works"
+            ? "/"
             : d.label === "Pricing"
             ? "/pricing"
-            : "/marketplace"
+            : "/domain"
         }
       >
         {d.label}
@@ -460,7 +454,7 @@ export default function Navbar() {
               Log in
             </a> */}
             <a
-              href="/get-started"
+              href="/"
               className="
                 inline-flex h-9 items-center justify-center rounded-full
                 bg-[#240029] px-4 text-sm font-semibold text-white
